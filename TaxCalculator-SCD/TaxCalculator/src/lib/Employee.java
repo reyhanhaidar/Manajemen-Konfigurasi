@@ -4,10 +4,15 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Employee {
-    private String employeeId;
-    private PersonalInformation personalInfo;
 
+public class Employee {
+    
+public enum Gender {
+    MALE, FEMALE
+}
+    private String employeeId;
+    private PersonalInfo personalInfo;
+    private Gender gender;
     private int yearJoined;
     private int monthJoined;
     private int dayJoined;
@@ -23,13 +28,14 @@ public class Employee {
     private List<String> childNames;
     private List<String> childIdNumbers;
 
-    public Employee(String employeeId, PersonalInformation personalInfo, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner) {
+    public Employee(String employeeId, PersonalInfo personalInfo, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, Gender gender) {
         this.employeeId = employeeId;
         this.personalInfo = personalInfo;
         this.yearJoined = yearJoined;
         this.monthJoined = monthJoined;
         this.dayJoined = dayJoined;
         this.isForeigner = isForeigner;
+        this.gender = gender;
 
         childNames = new LinkedList<String>();
         childIdNumbers = new LinkedList<String>();
