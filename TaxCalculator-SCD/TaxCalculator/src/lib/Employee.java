@@ -9,6 +9,7 @@ public enum Gender {
     MALE, FEMALE
 }
 
+
 public class Employee {
 
     private String employeeId;
@@ -51,7 +52,6 @@ public class Employee {
         childIdNumbers = new LinkedList<String>();
     }
 
-    // Other methods remain unchanged
 }
 	
 	/**
@@ -109,4 +109,4 @@ public class Employee {
 		
 		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
 	}
-}
+
