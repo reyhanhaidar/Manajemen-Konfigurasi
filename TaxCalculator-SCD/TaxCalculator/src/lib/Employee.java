@@ -21,8 +21,6 @@ public enum Gender {
     private boolean isForeigner;
 
     private Salary salary;
-
-    private String spouseName;
     private String spouseIdNumber;
 
     private List<String> childNames;
@@ -39,6 +37,14 @@ public enum Gender {
 
         childNames = new LinkedList<String>();
         childIdNumbers = new LinkedList<String>();
+    }
+
+    public String generateIdentification() {
+        StringBuilder identification = new StringBuilder();
+        identification.append("Employee ID: ").append(employeeId).append("\n");
+        identification.append("Personal Information: ").append(personalInfo.getFirstName()).append(" ").append(personalInfo.getLastName()).append("\n");
+        identification.append("Gender: ").append(gender).append("\n");
+        return identification.toString();
     }
 
     // Getter and setter for salary
@@ -82,7 +88,6 @@ public enum Gender {
 
     // Setter for spouse
     public void setSpouse(String spouseName, String spouseIdNumber) {
-        this.spouseName = spouseName;
         this.spouseIdNumber = spouseIdNumber;
     }
 
@@ -103,3 +108,5 @@ public enum Gender {
         return TaxFunction.calculateTax(salary.getMonthlySalary(), salary.getOtherMonthlyIncome(), monthWorkingInYear, salary.getAnnualDeductible(), spouseIdNumber.equals(""), childIdNumbers.size());
     }
 }
+
+
