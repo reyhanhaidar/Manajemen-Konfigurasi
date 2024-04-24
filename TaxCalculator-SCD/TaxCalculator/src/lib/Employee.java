@@ -11,12 +11,8 @@ public enum Gender {
 
 
 public class Employee {
-
     private String employeeId;
-    private String firstName;
-    private String lastName;
-    private String idNumber;
-    private String address;
+    private PersonalInformation personalInfo;
     
     private int yearJoined;
     private int monthJoined;
@@ -24,7 +20,6 @@ public class Employee {
     private int monthWorkingInYear;
     
     private boolean isForeigner;
-    private Gender gender; // Using the Gender enum
     
     private int monthlySalary;
     private int otherMonthlyIncome;
@@ -36,22 +31,19 @@ public class Employee {
     private List<String> childNames;
     private List<String> childIdNumbers;
     
-    public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, Gender gender) {
+    public Employee(String employeeId, PersonalInformation personalInfo, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner) {
         this.employeeId = employeeId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.idNumber = idNumber;
-        this.address = address;
+        this.personalInfo = personalInfo;
         this.yearJoined = yearJoined;
         this.monthJoined = monthJoined;
         this.dayJoined = dayJoined;
         this.isForeigner = isForeigner;
-        this.gender = gender;
         
         childNames = new LinkedList<String>();
         childIdNumbers = new LinkedList<String>();
     }
 
+    // Getters and setters for other fields
 }
 	
 	/**
