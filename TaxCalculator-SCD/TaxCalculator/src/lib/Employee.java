@@ -39,6 +39,10 @@ public enum Gender {
         childIdNumbers = new LinkedList<String>();
     }
 
+    public LocalDate getJoinDate() {
+        return LocalDate.of(yearJoined, monthJoined, dayJoined);
+    }
+
     public String generateIdentification() {
         StringBuilder identification = new StringBuilder();
         identification.append("Employee ID: ").append(employeeId).append("\n");
